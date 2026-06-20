@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>MODO — Pack de Redes Sociales</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:#0A0A08;color:#E8F0D8;padding:24px 16px 80px;max-width:600px;margin:0 auto;}
+h1{font-size:24px;font-weight:900;color:#9EC861;letter-spacing:-1px;margin-bottom:4px;}
+.subtitle{font-size:13px;color:rgba(232,240,216,.5);margin-bottom:32px;}
+.phase{margin-bottom:40px;}
+.phase-title{
+  font-size:10px;font-weight:700;letter-spacing:3px;color:#9EC861;
+  text-transform:uppercase;margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.phase-title::after{content:'';flex:1;height:1px;background:rgba(158,200,97,.15);}
+.post{
+  background:#111110;border:1px solid rgba(158,200,97,.12);
+  border-radius:16px;padding:18px;margin-bottom:12px;
+  position:relative;
+}
+.post-meta{
+  display:flex;align-items:center;gap:8px;margin-bottom:12px;
+}
+.post-platform{
+  font-size:9px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;padding:3px 10px;border-radius:100px;
+}
+.ig{background:rgba(225,48,108,.15);color:#E1306C;}
+.tt{background:rgba(0,0,0,.4);color:#fff;border:1px solid rgba(255,255,255,.15);}
+.both{background:rgba(158,200,97,.1);color:#9EC861;}
+.post-week{font-size:10px;color:rgba(232,240,216,.35);font-weight:600;}
+.post-copy{
+  font-size:14px;line-height:1.65;color:#E8F0D8;
+  white-space:pre-wrap;margin-bottom:12px;
+}
+.post-tags{font-size:11px;color:#9EC861;opacity:.7;line-height:1.8;}
+.post-tip{
+  background:rgba(158,200,97,.05);border-left:2px solid rgba(158,200,97,.3);
+  padding:8px 12px;border-radius:0 8px 8px 0;
+  font-size:11px;color:rgba(232,240,216,.5);line-height:1.5;
+  margin-top:10px;
+}
+.copy-btn{
+  position:absolute;top:16px;right:16px;
+  background:rgba(158,200,97,.1);border:1px solid rgba(158,200,97,.2);
+  color:#9EC861;font-size:10px;font-weight:700;
+  padding:4px 10px;border-radius:6px;cursor:pointer;
+  font-family:'Inter',sans-serif;
+  transition:all .15s;
+}
+.copy-btn:hover{background:rgba(158,200,97,.2);}
+.copy-btn.copied{color:#fff;background:rgba(158,200,97,.3);}
+.divider{height:1px;background:rgba(158,200,97,.08);margin:8px 0 16px;}
+.bio-section{
+  background:#111110;border:1px solid rgba(158,200,97,.2);
+  border-radius:16px;padding:20px;margin-bottom:40px;
+}
+.bio-platform{font-size:11px;font-weight:700;color:#9EC861;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.bio-text{font-size:13px;line-height:1.7;color:#E8F0D8;white-space:pre-wrap;}
+</style>
+</head>
+<body>
+
+<h1>MODO · Pack de Redes</h1>
+<p class="subtitle">Textos listos para copiar y publicar · Campaña pre-apertura 2026–2027</p>
+
+<!-- BIOS -->
+<div class="phase">
+  <div class="phase-title">Biografías de perfil</div>
+
+  <div class="bio-section">
+    <div class="bio-platform">Instagram</div>
+    <div class="bio-text">🥗 Bowls & burritos 100% a tu modo
+🌿 Sin conservantes · Ingredientes frescos
+📍 Valencia · Delivery & Takeaway
+⚡ Abrimos febrero 2027 — link para pre-registro 👇</div>
+    <button class="copy-btn" onclick="copyText(this, '🥗 Bowls & burritos 100% a tu modo\n🌿 Sin conservantes · Ingredientes frescos\n📍 Valencia · Delivery & Takeaway\n⚡ Abrimos febrero 2027 — link para pre-registro 👇')">Copiar</button>
+  </div>
+
+  <div class="bio-section">
+    <div class="bio-platform">TikTok</div>
+    <div class="bio-text">Comida real. A tu modo. 🥗
+📍 Valencia · Abrimos feb 2027
+👇 Pre-registro con 15% dto</div>
+    <button class="copy-btn" onclick="copyText(this, 'Comida real. A tu modo. 🥗\n📍 Valencia · Abrimos feb 2027\n👇 Pre-registro con 15% dto')">Copiar</button>
+  </div>
+</div>
+
+<!-- FASE 0 -->
+<div class="phase">
+  <div class="phase-title">Fase 0 · Lanzamiento de perfiles (Junio 2026)</div>
+
+  <div class="post">
+    <button class="copy-btn" onclick="copyPost(this)">Copiar</button>
+    <div class="post-meta">
+      <span class="post-platform both">Instagram + TikTok</span>
+      <span class="post-week">Semana 1</span>
+    </div>
+    <div class="post-copy">Algo está a punto de llegar a Valencia. 🌿
+
+Una nueva forma de comer. Fresca. Personalizable. Sin compromisos.
+
+Nos vemos pronto. 👀
+
+#Valencia #ComidaSaludable #Proximamente #Bowls #Burritos #MODO</div>
+    <div class="post-tip">💡 Publicar solo la imagen del logo MODO sobre fondo negro. Sin mostrar todavía el producto. Genera intriga.</div>
+  </div>
+
+  <div class="post">
+    <button class="copy-btn" onclick="copyPost(this)">Copiar</button>
+    <div class="post-meta">
+      <span class="post-platform ig">Instagram</span>
+      <span class="post-week">Semana 2</span>
+    </div>
+    <div class="post-copy">¿Bowl o burrito? 🤔
+
+Esa es la única pregunta que tendrás que hacerte. Todo lo demás lo personalizas tú.
+
+Responde en los comentarios 👇
+(ya casi podemos contarte más…)
+
+#MODO #Proximamente #Valencia</div>
+    <div class="post-tip">💡 Usar una story de encuesta "Bowl 🥗 vs Burrito 🌯" el mismo día para generar interacción.</div>
+  </div>
+
+  <div class="post">
+    <button class="copy-btn" onclick="copyPost(this)">Copiar</button>
+    <div class="post-meta">
+      <span class="post-platform tt">TikTok</span>
+      <span class="post-week">Semana 2</span>
+    </div>
+    <div class="post-copy">POV: encuentras el sitio donde vas a comer desde febrero 🥗
+
+#ComidaSaludable #Valencia #Bowls #FoodTikTok #Proximamente</div>
+    <div class="post-tip">💡 Video corto (5–8 seg) mostrando ingredientes frescos en slow motion. Sin texto en pantalla, solo la música y los hashtags.</div>
+  </div>
+</div>
+
+<!-- FASE 1 -->
+<div class="phase">
+  <div class="phase-title">Fase 1 · Contenido de producto (Ago–Sep 2026)</div>
+
+  <div class="post">
+    <button class="copy-btn" onclick="copyPost(this)">Copiar</button>
+    <div class="post-meta">
+      <span class="post-platform ig">Instagram</span>
+      <span class="post-week">Agosto · Semana 1</span>
+    </div>
+    <div class="post-copy">Este es el Bowl Fresh Greens. 🥗
+
+Quinoa · Kale · Aguacate
+Tomate cherry · Vinagreta de limón
+
+Sin conservantes. Hecho con ingredientes frescos cada mañana. 410 kcal. 28€.
+
+Y esto es solo el principio del menú. ✨
+
+#BowlFreshGreens #MODO #ComidaSaludable #Valencia #Vegano</div>
+    <div class="post-tip">💡 Foto profesional del bowl desde arriba (flat lay). Fondo oscuro o madera clara. Incluir los ingredientes alrededor.</div>
+  </div>
+
+  <div class="post">
+    <button class="copy-btn" onclick="copyPost(this)">Copiar</button>
+    <div class="post-meta">
+      <span class="post-platform tt">TikTok</span>
+      <span class="post-week">Agosto · Semana 2</span>
+    </div>
+    <div class="post-copy">Así se hace un burrito en MODO en menos de 2 minutos ⏱️🌯
+
+Sin conservantes. Solo ingredientes frescos del día.
+
+#BurritoVegano #MODO #FoodTikTok #Valencia #ComidaSana</div>
+    <div class="post-tip">💡 Video de proceso completo: tortilla → proteína → toppings → enrollar. Cámara cenital o lateral. Música rápida y enérgica.</div>
+  </div>
+
+  <div class="post">
+    <button class="copy-btn" onclick="copyPost(this)">Copiar</button>
+    <div class="post-meta">
+      <span class="post-platform both">Instagram + TikTok</span>
+      <span class="post-week">Agosto · Semana 3</span>
+    </div>
+    <div class="post-copy">¿Sabías que todos nuestros ingredientes llegan frescos cada mañana? 🌿
+
+Sin conservantes. Sin procesados. Sin compromisos.
+
+Solo comida de verdad, a tu manera.
+
+Pre-regístrate en la bio y consigue un 15% de descuento en tu primer pedido cuando abramos. ⚡
+
+#MODO #ComidaSaludable #Frescos #Valencia #SinConservantes</div>
+  </div>
+
+  <div class="post">
+    <button class="copy-btn" onclick="copyPost(this)">Copiar</button>
+    <div class="post-meta">
+      <span class="post-platform ig">Instagram</span>
+      <span class="post-week">Septiembre · Semana 1</span>
+    </div>
+    <div class="post-copy">Nuestra obsesión: que cada plato sea tuyo de verdad.
+
+¿Quieres más proteína? Añádela.
+¿Sin gluten? Lo hacemos.
+¿Más picante? Tú mandas.
+
+En MODO, tú decides hasta el último detalle. 🥑
+
+#Personalizable #MODO #TuComida #Bowl #Valencia</div>
+    <div class="post-tip">💡 Carrusel de 4–5 imágenes mostrando variaciones del mismo bowl con diferentes ingredientes.</div>
+  </div>
+</div>
+
+<!-- FASE 2 -->
+<div class="phase">
+  <div class="phase-title">Fase 2 · Comunidad y hype (Oct–Nov 2026)</div>
+
+  <div class="post">
+    <button class="copy-btn" onclick="copyPost(this)">Copiar</button>
+    <div class="post-meta">
+      <span class="post-platform ig">Instagram</span>
+      <span class="post-week">Octubre · Sorteo</span>
+    </div>
+    <div class="post-copy">🎁 SORTEO — Gana tu primer bowl GRATIS cuando abramos
+
+Para participar:
+1️⃣ Síguenos en @modo
+2️⃣ Dale like a esta foto
+3️⃣ Etiqueta a 2 personas que también deberían probar MODO
+
+Anunciamos el ganador el viernes. ¡Suerte! 🍀
+
+#Sorteo #MODO #Valencia #ComidaSaludable #Gratis</div>
+    <div class="post-tip">💡 El sorteo se entrega cuando abra el local (febrero 2027). Ideal para crecer rápido en seguidores.</div>
+  </div>
+
+  <div class="post">
+    <button class="copy-btn" onclick="copyPost(this)">Copiar</button>
+    <div class="post-meta">
+      <span class="post-platform both">Instagram + TikTok</span>
+      <span class="post-week">Noviembre · Behind the scenes</span>
+    </div>
+    <div class="post-copy">Así estamos preparando el local para vosotros 🛠️
+
+Cada detalle pensado para que te sientas a gusto mientras comes bien.
+
+Quedan pocos meses… ⏳
+
+#BehindTheScenes #MODO #Valencia #Proximamente #Local</div>
+    <div class="post-tip">💡 Video o fotos del local en obras/preparación. Muy auténtico y genera expectativa real.</div>
+  </div>
+
+  <div class="post">
+    <button class="copy-btn" onclick="copyPost(this)">Copiar</button>
+    <div class="post-meta">
+      <span class="post-platform ig">Instagram · Stories</span>
+      <span class="post-week">Noviembre · Cada semana</span>
+    </div>
+    <div class="post-copy">Ya somos [X] pre-registrados 🔥
+
+¿Aún no estás en la lista?
+👉 Link en la bio — 15% de descuento garantizado
+
+#MODO #Proximamente</div>
+    <div class="post-tip">💡 Actualizar el número cada semana. Genera urgencia y prueba social.</div>
+  </div>
+</div>
+
+<!-- FASE 3 -->
+<div class="phase">
+  <div class="phase-title">Fase 3 · Cuenta atrás (Dic 2026 – Ene 2027)</div>
+
+  <div class="post">
+    <button class="copy-btn" onclick="copyPost(this)">Copiar</button>
+    <div class="post-meta">
+      <span class="post-platform both">Instagram + TikTok</span>
+      <span class="post-week">Diciembre · "30 días para abrir"</span>
+    </div>
+    <div class="post-copy">30 días. ⏳
+
+En 30 días abrimos las puertas de MODO en Valencia.
+
+Si todavía no tienes tu pre-registro, es el momento. Los primeros en apuntarse tienen un 15% de descuento en su primer pedido.
+
+Link en la bio. 🔗
+
+#MODO #30Dias #Valencia #Proximamente #ComidaSaludable</div>
+  </div>
+
+  <div class="post">
+    <button class="copy-btn" onclick="copyPost(this)">Copiar</button>
+    <div class="post-meta">
+      <span class="post-platform ig">Instagram</span>
+      <span class="post-week">Enero · Menú completo reveal</span>
+    </div>
+    <div class="post-copy">El menú completo. Por fin. 🥗🌯
+
+Bowls, burritos, proteínas y salsas que no habías visto antes.
+
+Cada plato, 100% personalizable. Cada ingrediente, fresco del día.
+
+¿Cuál vas a pedir primero? Cuéntanos 👇
+
+Abrimos el [fecha]. Link de pre-registro en la bio.
+
+#MODO #MenuReveal #Valencia #ComidaSaludable #BowlLovers</div>
+    <div class="post-tip">💡 Carrusel con foto individual de cada plato del menú. El mejor contenido para guardar y compartir.</div>
+  </div>
+
+  <div class="post">
+    <button class="copy-btn" onclick="copyPost(this)">Copiar</button>
+    <div class="post-meta">
+      <span class="post-platform both">Instagram + TikTok</span>
+      <span class="post-week">Enero · Preview con influencers</span>
+    </div>
+    <div class="post-copy">Les invitamos a probar MODO antes de que abra. Esto fue lo que pasó 👀
+
+[etiquetas de los influencers]
+
+Faltan [X] días. ¿Estás listo? 🥗
+
+#MODO #Preview #Valencia #FoodReview</div>
+    <div class="post-tip">💡 Repostear los contenidos de los influencers + subir un video propio del evento preview.</div>
+  </div>
+</div>
+
+<!-- APERTURA -->
+<div class="phase">
+  <div class="phase-title">Fase 4 · Apertura (Febrero 2027)</div>
+
+  <div class="post">
+    <button class="copy-btn" onclick="copyPost(this)">Copiar</button>
+    <div class="post-meta">
+      <span class="post-platform both">Instagram + TikTok</span>
+      <span class="post-week">Día de apertura</span>
+    </div>
+    <div class="post-copy">El día ha llegado. 🎉
+
+MODO ya está abierto en Valencia.
+
+Comida real. A tu modo. Sin conservantes. Sin compromisos.
+
+Hoy es el día. ¿Vas a ser de los primeros? 🥗
+
+📍 [dirección]
+📱 Pide en la app o en nuestra web
+
+#MODO #GranApertura #Valencia #YaEstamosAbiertos #ComidaSaludable</div>
+  </div>
+</div>
+
+<script>
+function copyText(btn, text){
+  navigator.clipboard.writeText(text).then(function(){
+    btn.textContent='¡Copiado!';btn.classList.add('copied');
+    setTimeout(function(){btn.textContent='Copiar';btn.classList.remove('copied');},2000);
+  });
+}
+function copyPost(btn){
+  var post=btn.closest('.post');
+  var text=post.querySelector('.post-copy').textContent.trim();
+  copyText(btn,text);
+}
+</script>
+</body>
+</html>

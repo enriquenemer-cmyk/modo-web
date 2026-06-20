@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>¡Ya estás en la lista de MODO!</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#0A0A08;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;}
+.wrapper{max-width:520px;margin:0 auto;padding:24px 16px;}
+.card{background:#111110;border-radius:20px;overflow:hidden;border:1px solid rgba(158,200,97,.12);}
+.header{
+  background:linear-gradient(160deg,#0D1F06 0%,#000 100%);
+  padding:48px 32px 36px;text-align:center;
+  border-bottom:1px solid rgba(158,200,97,.1);
+  position:relative;overflow:hidden;
+}
+.header::before{
+  content:'';position:absolute;
+  top:10%;left:50%;transform:translateX(-50%);
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(158,200,97,.12) 0%,transparent 65%);
+  pointer-events:none;
+}
+.logo{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:28px;}
+.logo-text{font-size:36px;font-weight:900;letter-spacing:-2px;color:#9EC861;}
+.logo-o{width:32px;height:32px;}
+.header-emoji{font-size:40px;margin-bottom:16px;display:block;}
+.header-h{font-size:26px;font-weight:900;color:#E8F0D8;letter-spacing:-0.5px;line-height:1.2;margin-bottom:10px;}
+.header-h em{color:#9EC861;font-style:normal;}
+.header-sub{font-size:14px;color:rgba(232,240,216,.55);line-height:1.6;max-width:320px;margin:0 auto;}
+.body{padding:32px 28px;}
+.discount-badge{
+  background:linear-gradient(135deg,rgba(158,200,97,.15) 0%,rgba(158,200,97,.06) 100%);
+  border:1.5px solid rgba(158,200,97,.3);
+  border-radius:16px;padding:24px;text-align:center;margin-bottom:28px;
+}
+.discount-n{font-size:48px;font-weight:900;color:#9EC861;letter-spacing:-2px;line-height:1;}
+.discount-label{font-size:12px;color:rgba(232,240,216,.5);font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-top:4px;}
+.discount-sub{font-size:13px;color:rgba(232,240,216,.6);margin-top:10px;line-height:1.5;}
+.code-box{
+  background:rgba(0,0,0,.4);
+  border:1px dashed rgba(158,200,97,.3);
+  border-radius:10px;padding:12px 20px;
+  text-align:center;margin-top:16px;
+}
+.code-label{font-size:10px;color:rgba(232,240,216,.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;}
+.code-text{font-size:20px;font-weight:900;color:#9EC861;letter-spacing:4px;}
+.section-title{font-size:11px;font-weight:700;letter-spacing:3px;color:#9EC861;text-transform:uppercase;margin-bottom:14px;}
+.steps{list-style:none;margin-bottom:28px;}
+.steps li{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:14px 0;border-bottom:1px solid rgba(158,200,97,.08);
+}
+.steps li:last-child{border-bottom:none;}
+.step-icon{
+  width:36px;height:36px;min-width:36px;border-radius:50%;
+  background:rgba(158,200,97,.08);border:1px solid rgba(158,200,97,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;
+}
+.step-title{font-size:14px;font-weight:700;color:#E8F0D8;margin-bottom:2px;}
+.step-desc{font-size:12px;color:rgba(232,240,216,.45);line-height:1.4;}
+.menu-preview{margin-bottom:28px;}
+.menu-item{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 0;border-bottom:1px solid rgba(158,200,97,.06);
+}
+.menu-item:last-child{border-bottom:none;}
+.menu-name{font-size:13px;font-weight:700;color:#E8F0D8;}
+.menu-desc{font-size:11px;color:rgba(232,240,216,.4);margin-top:1px;}
+.menu-price{font-size:14px;font-weight:900;color:#9EC861;white-space:nowrap;margin-left:12px;}
+.cta-block{text-align:center;margin-bottom:24px;}
+.cta-btn{
+  display:inline-block;
+  background:#9EC861;color:#0A1A04;
+  font-size:15px;font-weight:800;
+  padding:15px 36px;border-radius:100px;
+  text-decoration:none;
+  letter-spacing:-0.3px;
+}
+.social-row{
+  display:flex;gap:12px;justify-content:center;margin-bottom:28px;
+}
+.social-link{
+  display:flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(158,200,97,.1);
+  border-radius:10px;padding:10px 16px;
+  text-decoration:none;color:#9EC861;
+  font-size:12px;font-weight:700;
+}
+.divider{height:1px;background:rgba(158,200,97,.08);margin:24px 0;}
+.footer-text{font-size:11px;color:rgba(232,240,216,.25);text-align:center;line-height:1.7;}
+.footer-text a{color:rgba(158,200,97,.5);text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="card">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo">
+      <span class="logo-text">MOD</span>
+      <svg class="logo-o" viewBox="0 0 100 100" fill="none">
+        <path d="M50 8 A42 42 0 0 1 86.4 29" stroke="#9EC861" stroke-width="11" stroke-linecap="butt" fill="none"/>
+        <path d="M92 50 A42 42 0 0 1 71 87.4" stroke="#9EC861" stroke-width="11" stroke-linecap="butt" fill="none"/>
+        <path d="M29 91.4 A42 42 0 0 1 8 50" stroke="#9EC861" stroke-width="11" stroke-linecap="butt" fill="none"/>
+      </svg>
+    </div>
+    <span class="header-emoji">🎉</span>
+    <h1 class="header-h">¡Ya estás en<br><em>la lista de MODO!</em></h1>
+    <p class="header-sub">Bienvenido/a. Eres de las primeras personas en sumarse. Eso merece una recompensa.</p>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- DESCUENTO -->
+    <div class="discount-badge">
+      <p class="discount-n">15%</p>
+      <p class="discount-label">Descuento de bienvenida</p>
+      <p class="discount-sub">En tu primer pedido cuando abramos en febrero 2027.<br>Este descuento es exclusivo para pre-registrados.</p>
+      <div class="code-box">
+        <p class="code-label">Tu código</p>
+        <p class="code-text">MODO15</p>
+      </div>
+    </div>
+
+    <!-- QUÉ PASA AHORA -->
+    <p class="section-title">¿Qué pasa ahora?</p>
+    <ul class="steps">
+      <li>
+        <div class="step-icon">🔔</div>
+        <div>
+          <p class="step-title">Te avisamos antes que nadie</p>
+          <p class="step-desc">Cuando se confirme la fecha exacta de apertura, serás el primero en saberlo por email.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-icon">📱</div>
+        <div>
+          <p class="step-title">Descarga la app MODO</p>
+          <p class="step-desc">Disponible en App Store y Google Play. Tenla lista para pedir desde el día 1.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-icon">🥗</div>
+        <div>
+          <p class="step-title">Elige tu primer plato</p>
+          <p class="step-desc">Ya puedes ver el menú en nuestra web. ¿Cuál va a ser el tuyo?</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-icon">⚡</div>
+        <div>
+          <p class="step-title">Usa tu código MODO15</p>
+          <p class="step-desc">Al hacer tu primer pedido, aplica el código y disfruta tu descuento del 15%.</p>
+        </div>
+      </li>
+    </ul>
+
+    <!-- PREVIEW MENÚ -->
+    <p class="section-title">Preview del menú</p>
+    <div class="menu-preview">
+      <div class="menu-item">
+        <div><p class="menu-name">🥗 Bowl Fresh Greens</p><p class="menu-desc">Quinoa · Kale · Aguacate · Vinagreta de limón</p></div>
+        <p class="menu-price">28€</p>
+      </div>
+      <div class="menu-item">
+        <div><p class="menu-name">💪 Bowl Power Protein</p><p class="menu-desc">Arroz integral · Salmón · Edamame · Tahini</p></div>
+        <p class="menu-price">36€</p>
+      </div>
+      <div class="menu-item">
+        <div><p class="menu-name">🌯 Burrito Clásico</p><p class="menu-desc">Pollo · Arroz · Frijoles · Pico de gallo</p></div>
+        <p class="menu-price">24€</p>
+      </div>
+      <div class="menu-item">
+        <div><p class="menu-name">🌱 Burrito Vegano</p><p class="menu-desc">Garbanzos · Quinoa · Aguacate · Jalapeño</p></div>
+        <p class="menu-price">22€</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block">
+      <a href="https://modo.es" class="cta-btn">Ver menú completo →</a>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- REDES -->
+    <p class="section-title" style="text-align:center;">Síguenos</p>
+    <div class="social-row">
+      <a href="https://instagram.com/modo" class="social-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @modo
+      </a>
+      <a href="https://tiktok.com/@modo" class="social-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.28 8.28 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/></svg>
+        @modo
+      </a>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="footer-text">
+      Has recibido este correo porque te pre-registraste en modo.es<br>
+      <a href="#">Darse de baja</a> · <a href="#">Política de privacidad</a><br><br>
+      © 2026 MODO · Valencia, España
+    </p>
+
+  </div>
+</div>
+</div>
+</body>
+</html>
