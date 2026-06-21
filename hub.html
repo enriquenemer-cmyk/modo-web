@@ -3,356 +3,215 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>MODO HUB — Centro de Control</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<title>MODO — Centro de Control</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+*{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --lime:#9EC861;--lime-dim:rgba(158,200,97,.08);--lime-border:rgba(158,200,97,.18);
-  --black:#000;--card:#0E0E0C;--card2:#141412;--text:#E8F0D8;--muted:rgba(232,240,216,.45);
+  --lime:#9EC861;--lime2:#B8D870;
+  --black:#000;--card:#0F0F0D;--card2:#161614;
+  --border:rgba(158,200,97,.15);--border2:rgba(158,200,97,.08);
+  --text:#E8F0D8;--muted:rgba(232,240,216,.5);--faint:rgba(232,240,216,.2);
 }
-html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;background:var(--black);color:var(--text);-webkit-font-smoothing:antialiased;min-height:100vh;}
 
-.topbar{
-  position:fixed;top:0;left:0;right:0;z-index:200;height:56px;
-  display:flex;align-items:center;justify-content:space-between;padding:0 24px;
-  background:rgba(0,0,0,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--lime-border);
+/* TOPBAR */
+.top{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:54px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;background:rgba(0,0,0,.85);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border2);
 }
-.topbar-left{display:flex;align-items:center;gap:10px;}
-.topbar-logo svg{width:26px;height:26px;}
-.topbar-title{font-size:15px;font-weight:900;color:var(--lime);letter-spacing:-0.5px;}
-.topbar-sub{font-size:11px;color:var(--muted);}
-.topbar-right{display:flex;align-items:center;gap:10px;}
-.live-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 6px var(--lime);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
-.topbar-date{font-size:11px;color:var(--muted);}
+.top-logo{display:flex;align-items:center;gap:8px;}
+.top-logo svg{width:22px;height:22px;}
+.top-name{font-size:15px;font-weight:900;color:var(--lime);letter-spacing:-.3px;}
+.top-label{font-size:11px;color:var(--muted);margin-left:2px;}
+.top-right{display:flex;align-items:center;gap:8px;}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 5px var(--lime);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+.top-date{font-size:11px;color:var(--muted);}
 
-.main{padding:76px 20px 60px;max-width:860px;margin:0 auto;}
+/* MAIN */
+.main{max-width:780px;margin:0 auto;padding:74px 20px 60px;}
 
-/* COUNTDOWN BANNER */
-.countdown-banner{
-  background:var(--card);border:1px solid var(--lime-border);border-radius:16px;
-  padding:18px 24px;margin-bottom:28px;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+/* COUNTDOWN */
+.countdown{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:16px;padding:20px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;margin-bottom:32px;
 }
-.cb-label{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
-.cb-timer{display:flex;gap:20px;}
-.cb-unit{text-align:center;}
-.cb-n{font-size:28px;font-weight:900;color:var(--lime);letter-spacing:-1px;display:block;line-height:1;}
-.cb-u{font-size:9px;color:var(--muted);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;}
-.cb-tag{font-size:11px;font-weight:700;color:var(--lime);background:rgba(158,200,97,.1);border:1px solid rgba(158,200,97,.2);padding:4px 12px;border-radius:100px;}
+.cd-left p:first-child{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--lime);text-transform:uppercase;margin-bottom:4px;}
+.cd-left p:last-child{font-size:12px;color:var(--muted);}
+.cd-nums{display:flex;gap:16px;}
+.cd-unit{text-align:center;}
+.cd-n{font-size:30px;font-weight:900;color:var(--lime);letter-spacing:-1px;display:block;line-height:1;}
+.cd-l{font-size:9px;color:var(--muted);font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-top:3px;}
+.cd-tag{font-size:11px;font-weight:700;background:rgba(158,200,97,.1);color:var(--lime);border:1px solid rgba(158,200,97,.2);padding:5px 14px;border-radius:100px;}
 
-/* SECTION */
-.section-title{font-size:10px;font-weight:700;letter-spacing:2.5px;color:var(--muted);text-transform:uppercase;margin-bottom:12px;margin-top:28px;}
+/* SECTION LABEL */
+.sec-label{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:12px;}
 
-/* PLATFORM GRID */
-.platform-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;}
+/* PLATFORM CARDS */
+.platforms{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
 
-.platform-card{
-  background:var(--card);border:1px solid var(--lime-border);border-radius:16px;
-  padding:20px;display:flex;flex-direction:column;gap:14px;
-  transition:border-color .2s,transform .15s;cursor:default;
+.pcard{
+  background:var(--card);border:1px solid var(--border2);
+  border-radius:18px;padding:22px 24px;
+  display:flex;align-items:center;gap:20px;
+  transition:border-color .2s,transform .15s;
 }
-.platform-card:hover{border-color:rgba(158,200,97,.4);transform:translateY(-2px);}
+.pcard:hover{border-color:var(--border);transform:translateY(-1px);}
 
-.pc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
-.pc-icon{width:40px;height:40px;border-radius:10px;background:var(--lime-dim);border:1px solid var(--lime-border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-.pc-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;letter-spacing:.5px;}
-.badge-live{background:rgba(158,200,97,.1);color:var(--lime);border:1px solid rgba(158,200,97,.25);}
-.badge-build{background:rgba(248,160,50,.08);color:#F8A032;border:1px solid rgba(248,160,50,.2);}
-.badge-ios{background:rgba(77,158,255,.08);color:#4D9EFF;border:1px solid rgba(77,158,255,.2);}
+.pcard-icon{
+  width:52px;height:52px;border-radius:14px;
+  background:var(--card2);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;flex-shrink:0;
+}
+.pcard-info{flex:1;min-width:0;}
+.pcard-name{font-size:16px;font-weight:800;margin-bottom:4px;letter-spacing:-.3px;}
+.pcard-desc{font-size:13px;color:var(--muted);line-height:1.4;}
+.pcard-actions{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap;}
 
-.pc-name{font-size:15px;font-weight:800;color:var(--text);letter-spacing:-.3px;}
-.pc-desc{font-size:12px;color:var(--muted);line-height:1.5;}
-
-.pc-actions{display:flex;gap:8px;flex-wrap:wrap;}
 .btn{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:12px;font-weight:700;padding:8px 14px;border-radius:10px;
-  text-decoration:none;border:none;cursor:pointer;transition:all .15s;
-  font-family:'Inter',sans-serif;
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:13px;font-weight:700;
+  padding:9px 16px;border-radius:10px;
+  border:none;cursor:pointer;transition:all .15s;
+  font-family:'Inter',sans-serif;text-decoration:none;
+  white-space:nowrap;
 }
-.btn-primary{background:var(--lime);color:#0A1A04;}
-.btn-primary:hover{background:#B8D870;}
-.btn-ghost{background:rgba(255,255,255,.05);color:var(--text);border:1px solid rgba(255,255,255,.1);}
+.btn-lime{background:var(--lime);color:#0A1A04;}
+.btn-lime:hover{background:var(--lime2);}
+.btn-ghost{background:rgba(255,255,255,.06);color:var(--text);border:1px solid rgba(255,255,255,.1);}
 .btn-ghost:hover{background:rgba(255,255,255,.1);}
 
-/* TOOLS ROW */
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;}
-.tool-card{
-  background:var(--card);border:1px solid var(--lime-border);border-radius:12px;
-  padding:16px;display:flex;align-items:center;gap:12px;
-  text-decoration:none;color:var(--text);transition:border-color .2s,transform .15s;
-}
-.tool-card:hover{border-color:rgba(158,200,97,.4);transform:translateY(-1px);}
-.tool-icon{font-size:20px;}
-.tool-name{font-size:13px;font-weight:700;}
-.tool-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+/* STATUS BADGE */
+.badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;}
+.badge-live{background:rgba(158,200,97,.1);color:var(--lime);border:1px solid rgba(158,200,97,.2);}
+.badge-ios{background:rgba(77,158,255,.08);color:#4D9EFF;border:1px solid rgba(77,158,255,.2);}
 
-/* DNS WARNING */
-.dns-warning{
-  background:rgba(248,160,50,.06);border:1px solid rgba(248,160,50,.25);
-  border-radius:12px;padding:14px 18px;margin-top:28px;
-  display:flex;align-items:center;gap:12px;
+/* TOAST */
+#toast{
+  position:fixed;bottom:24px;right:24px;
+  background:var(--lime);color:#0A1A04;
+  font-size:13px;font-weight:700;
+  padding:10px 20px;border-radius:10px;
+  opacity:0;transform:translateY(8px);
+  transition:all .25s;pointer-events:none;z-index:999;
 }
-.dns-warning-icon{font-size:20px;}
-.dns-warning-text{font-size:13px;color:rgba(248,160,50,.9);line-height:1.5;}
-.dns-warning-text strong{color:#F8A032;}
-.dns-warning-text code{background:rgba(248,160,50,.1);padding:1px 6px;border-radius:4px;font-size:12px;}
-
-/* FOOTER */
-.footer{text-align:center;font-size:11px;color:rgba(232,240,216,.2);margin-top:48px;padding-bottom:32px;}
 </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
-<header class="topbar">
-  <div class="topbar-left">
-    <div class="topbar-logo">
-      <svg viewBox="0 0 100 100" fill="none">
-        <path d="M50 8 A42 42 0 0 1 86.4 29" stroke="#9EC861" stroke-width="11" stroke-linecap="butt"/>
-        <path d="M92 50 A42 42 0 0 1 71 87.4" stroke="#9EC861" stroke-width="11" stroke-linecap="butt"/>
-        <path d="M29 91.4 A42 42 0 0 1 8 50" stroke="#9EC861" stroke-width="11" stroke-linecap="butt"/>
-      </svg>
-    </div>
-    <span class="topbar-title">MODO HUB</span>
-    <span class="topbar-sub">Centro de Control</span>
+<header class="top">
+  <div class="top-logo">
+    <svg viewBox="0 0 100 100" fill="none">
+      <path d="M50 8 A42 42 0 0 1 86.4 29" stroke="#9EC861" stroke-width="13" stroke-linecap="butt"/>
+      <path d="M92 50 A42 42 0 0 1 71 87.4" stroke="#9EC861" stroke-width="13" stroke-linecap="butt"/>
+      <path d="M29 91.4 A42 42 0 0 1 8 50" stroke="#9EC861" stroke-width="13" stroke-linecap="butt"/>
+    </svg>
+    <span class="top-name">MODO</span>
+    <span class="top-label">Centro de Control</span>
   </div>
-  <div class="topbar-right">
+  <div class="top-right">
     <div class="live-dot"></div>
-    <span class="topbar-date" id="topbar-date"></span>
+    <span class="top-date" id="top-date"></span>
   </div>
 </header>
 
 <main class="main">
 
   <!-- COUNTDOWN -->
-  <div class="countdown-banner">
-    <div>
-      <p class="cb-label">Apertura MODO · Valencia</p>
-      <p style="font-size:12px;color:var(--muted);margin-top:4px;">1 febrero 2027</p>
+  <div class="countdown">
+    <div class="cd-left">
+      <p>Apertura · Valencia</p>
+      <p>1 febrero 2027</p>
     </div>
-    <div class="cb-timer">
-      <div class="cb-unit"><span class="cb-n" id="cd-d">--</span><span class="cb-u">días</span></div>
-      <div class="cb-unit"><span class="cb-n" id="cd-h">--</span><span class="cb-u">horas</span></div>
-      <div class="cb-unit"><span class="cb-n" id="cd-m">--</span><span class="cb-u">min</span></div>
-      <div class="cb-unit"><span class="cb-n" id="cd-s">--</span><span class="cb-u">seg</span></div>
+    <div class="cd-nums">
+      <div class="cd-unit"><span class="cd-n" id="cd-d">--</span><span class="cd-l">días</span></div>
+      <div class="cd-unit"><span class="cd-n" id="cd-h">--</span><span class="cd-l">horas</span></div>
+      <div class="cd-unit"><span class="cd-n" id="cd-m">--</span><span class="cd-l">min</span></div>
+      <div class="cd-unit"><span class="cd-n" id="cd-s">--</span><span class="cd-l">seg</span></div>
     </div>
-    <span class="cb-tag">🚀 Pre-lanzamiento activo</span>
+    <span class="cd-tag">🚀 Pre-lanzamiento</span>
   </div>
 
-  <!-- PLATAFORMAS PÚBLICAS -->
-  <p class="section-title">Plataformas públicas</p>
-  <div class="platform-grid">
-
-    <!-- MODO WEB -->
-    <div class="platform-card">
-      <div class="pc-top">
-        <div class="pc-icon">🌐</div>
-        <span class="pc-badge badge-live">En vivo</span>
-      </div>
-      <div>
-        <p class="pc-name">MODO Web</p>
-        <p class="pc-desc">Landing de pre-lanzamiento. Countdown, formulario de pre-registro y preview del menú.</p>
-      </div>
-      <div class="pc-actions">
-        <a href="https://premia-tierra.vercel.app" target="_blank" class="btn btn-primary">Abrir web →</a>
-        <a href="https://github.com/enriquenemer-cmyk/modo-web" target="_blank" class="btn btn-ghost">GitHub</a>
-      </div>
-    </div>
-
-    <!-- PREMIA-MODO -->
-    <div class="platform-card">
-      <div class="pc-top">
-        <div class="pc-icon">🎁</div>
-        <span class="pc-badge badge-live">En vivo</span>
-      </div>
-      <div>
-        <p class="pc-name">Premia-MODO</p>
-        <p class="pc-desc">Programa de fidelización. Puntos, premios QR, panel cajero y panel de administración.</p>
-      </div>
-      <div class="pc-actions">
-        <a href="https://premia-tierra.vercel.app/admin/login" target="_blank" class="btn btn-primary">Abrir panel →</a>
-        <a href="https://premia-tierra.vercel.app" target="_blank" class="btn btn-ghost">Web pública</a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- APPS iOS -->
-  <p class="section-title">Apps iOS</p>
-  <div class="platform-grid">
-
-    <!-- MODO APP -->
-    <div class="platform-card">
-      <div class="pc-top">
-        <div class="pc-icon">📱</div>
-        <span class="pc-badge badge-ios">iOS — Xcode</span>
-      </div>
-      <div>
-        <p class="pc-name">ModoApp</p>
-        <p class="pc-desc">App del cliente. Splash, login, menú con fotos. Lista para testear en simulador.</p>
-      </div>
-      <div class="pc-actions">
-        <button class="btn btn-primary" onclick="copyPath('/Users/macbook/ModoApp')">Copiar ruta</button>
-        <button class="btn btn-ghost" onclick="openXcode('ModoApp')">Abrir Xcode</button>
-      </div>
-    </div>
+  <!-- PLATAFORMAS -->
+  <p class="sec-label">Plataformas</p>
+  <div class="platforms">
 
     <!-- SUPERMODO -->
-    <div class="platform-card">
-      <div class="pc-top">
-        <div class="pc-icon">⚡</div>
-        <span class="pc-badge badge-ios">iOS — Xcode</span>
+    <div class="pcard">
+      <div class="pcard-icon">⚡</div>
+      <div class="pcard-info">
+        <p class="pcard-name">SuperMODO <span class="badge badge-ios" style="margin-left:6px;vertical-align:middle;">iOS</span></p>
+        <p class="pcard-desc">Panel de gestión interno. Ventas, finanzas, operaciones y delivery.</p>
       </div>
-      <div>
-        <p class="pc-name">SuperMODO</p>
-        <p class="pc-desc">Panel de gestión interno iOS. Ventas, finanzas, operaciones y delivery.</p>
+      <div class="pcard-actions">
+        <button class="btn btn-lime" onclick="copyXcode('SuperMODO')">Abrir en Xcode</button>
+        <button class="btn btn-ghost" onclick="copyPath('/Users/macbook/SuperMODO')">Copiar ruta</button>
       </div>
-      <div class="pc-actions">
-        <button class="btn btn-primary" onclick="copyPath('/Users/macbook/SuperMODO')">Copiar ruta</button>
-        <button class="btn btn-ghost" onclick="openXcode('SuperMODO')">Abrir Xcode</button>
+    </div>
+
+    <!-- WEB -->
+    <div class="pcard">
+      <div class="pcard-icon">🌐</div>
+      <div class="pcard-info">
+        <p class="pcard-name">Página Web <span class="badge badge-live" style="margin-left:6px;vertical-align:middle;">En vivo</span></p>
+        <p class="pcard-desc">Web pública de MODO con pre-registro, menú y cuenta atrás.</p>
+      </div>
+      <div class="pcard-actions">
+        <a href="https://modo-web-sigma.vercel.app" target="_blank" class="btn btn-lime">Abrir web →</a>
+        <a href="https://vercel.com/enriquenemer-5454s-projects" target="_blank" class="btn btn-ghost">Vercel</a>
+      </div>
+    </div>
+
+    <!-- MODOAPP -->
+    <div class="pcard">
+      <div class="pcard-icon">📱</div>
+      <div class="pcard-info">
+        <p class="pcard-name">ModoApp <span class="badge badge-ios" style="margin-left:6px;vertical-align:middle;">iOS</span></p>
+        <p class="pcard-desc">App del cliente. Splash, login y menú con fotos reales. Lista para simulador.</p>
+      </div>
+      <div class="pcard-actions">
+        <button class="btn btn-lime" onclick="copyXcode('ModoApp')">Abrir en Xcode</button>
+        <button class="btn btn-ghost" onclick="copyPath('/Users/macbook/ModoApp')">Copiar ruta</button>
       </div>
     </div>
 
   </div>
-
-  <!-- HERRAMIENTAS INTERNAS -->
-  <p class="section-title">Herramientas internas</p>
-  <div class="platform-grid">
-
-    <!-- TOXICO-MODO -->
-    <div class="platform-card">
-      <div class="pc-top">
-        <div class="pc-icon">📊</div>
-        <span class="pc-badge badge-build">Dev local</span>
-      </div>
-      <div>
-        <p class="pc-name">TOXICO-MODO</p>
-        <p class="pc-desc">Analítica de Instagram @modo. Posts, likes, comentarios y tendencias en tiempo real.</p>
-      </div>
-      <div class="pc-actions">
-        <button class="btn btn-primary" onclick="openTerminal('TOXICO-MODO','npm run dev')">Iniciar local</button>
-        <button class="btn btn-ghost" onclick="copyPath('/Users/macbook/TOXICO-MODO')">Copiar ruta</button>
-      </div>
-    </div>
-
-    <!-- CAMPAIGN & SOCIAL -->
-    <div class="platform-card">
-      <div class="pc-top">
-        <div class="pc-icon">📅</div>
-        <span class="pc-badge badge-live">Listo</span>
-      </div>
-      <div>
-        <p class="pc-name">Marketing MODO</p>
-        <p class="pc-desc">Plan de campaña Jun 2026 → Feb 2027. 16 posts redactados y email de bienvenida.</p>
-      </div>
-      <div class="pc-actions">
-        <a href="social-pack.html" target="_blank" class="btn btn-primary">Pack redes →</a>
-        <a href="email-bienvenida.html" target="_blank" class="btn btn-ghost">Email</a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ACCESOS RÁPIDOS -->
-  <p class="section-title">Accesos rápidos</p>
-  <div class="tools-grid">
-    <a href="index.html#registro" target="_blank" class="tool-card">
-      <span class="tool-icon">✉️</span>
-      <div><p class="tool-name">Pre-registros</p><p class="tool-sub">Formulario en vivo</p></div>
-    </a>
-    <a href="https://vercel.com/enriquenemer-5454s-projects" target="_blank" class="tool-card">
-      <span class="tool-icon">▲</span>
-      <div><p class="tool-name">Vercel</p><p class="tool-sub">Deploys y logs</p></div>
-    </a>
-    <a href="https://github.com/enriquenemer-cmyk/modo-web" target="_blank" class="tool-card">
-      <span class="tool-icon">🐙</span>
-      <div><p class="tool-name">GitHub</p><p class="tool-sub">Código fuente web</p></div>
-    </a>
-    <a href="https://nameshift.com" target="_blank" class="tool-card">
-      <span class="tool-icon">🌍</span>
-      <div><p class="tool-name">Nameshift</p><p class="tool-sub">DNS — modo.es</p></div>
-    </a>
-    <a href="https://web3forms.com" target="_blank" class="tool-card">
-      <span class="tool-icon">📬</span>
-      <div><p class="tool-name">Web3Forms</p><p class="tool-sub">Emails pre-registro</p></div>
-    </a>
-    <a href="social-pack.html" target="_blank" class="tool-card">
-      <span class="tool-icon">📸</span>
-      <div><p class="tool-name">Pack Social</p><p class="tool-sub">16 posts listos</p></div>
-    </a>
-  </div>
-
-  <!-- DNS WARNING -->
-  <div class="dns-warning">
-    <span class="dns-warning-icon">⚠️</span>
-    <div class="dns-warning-text">
-      <strong>DNS pendiente:</strong> modo.es apunta a la IP incorrecta. En Nameshift, cambia el registro A de <code>209.38.54.191</code> a <code>76.76.21.21</code> para activar el dominio.
-    </div>
-  </div>
-
-  <div class="footer">MODO HUB · Sistema de control interno · Valencia 2026</div>
 
 </main>
 
-<!-- TOAST -->
-<div id="toast" style="position:fixed;bottom:24px;right:24px;background:#9EC861;color:#0A1A04;font-size:13px;font-weight:700;padding:10px 20px;border-radius:10px;opacity:0;transform:translateY(8px);transition:all .25s;pointer-events:none;z-index:999;">
-  ✓ Copiado
-</div>
+<div id="toast">✓ Copiado</div>
 
 <script>
 // Date
-function updateDate(){
-  var d=new Date();
-  var days=['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
-  var months=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-  document.getElementById('topbar-date').textContent=days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' · '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
-}
-updateDate();setInterval(updateDate,30000);
+(function tick(){
+  var d=new Date(),days=['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],m=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  document.getElementById('top-date').textContent=days[d.getDay()]+' '+d.getDate()+' '+m[d.getMonth()]+' · '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+})();
 
-// Countdown to Feb 1 2027
-function updateCountdown(){
-  var target=new Date('2027-02-01T00:00:00');
-  var now=new Date();
-  var diff=target-now;
-  if(diff<=0){document.getElementById('cd-d').textContent='0';return;}
-  var d=Math.floor(diff/86400000);
-  var h=Math.floor((diff%86400000)/3600000);
-  var m=Math.floor((diff%3600000)/60000);
-  var s=Math.floor((diff%60000)/1000);
-  document.getElementById('cd-d').textContent=d;
-  document.getElementById('cd-h').textContent=String(h).padStart(2,'0');
-  document.getElementById('cd-m').textContent=String(m).padStart(2,'0');
-  document.getElementById('cd-s').textContent=String(s).padStart(2,'0');
-}
-updateCountdown();setInterval(updateCountdown,1000);
+// Countdown
+(function tick(){
+  var t=new Date('2027-02-01T10:00:00')-new Date();
+  if(t<0)t=0;
+  document.getElementById('cd-d').textContent=Math.floor(t/864e5);
+  document.getElementById('cd-h').textContent=String(Math.floor(t%864e5/36e5)).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(Math.floor(t%36e5/6e4)).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(Math.floor(t%6e4/1e3)).padStart(2,'0');
+  setTimeout(tick,1000);
+})();
 
-// Copy path
-function copyPath(path){
-  navigator.clipboard.writeText(path).then(function(){showToast('✓ Ruta copiada');});
+// Copy helpers
+function copyPath(p){navigator.clipboard.writeText(p).then(function(){toast('✓ Ruta copiada');});}
+function copyXcode(proj){
+  var p={SuperMODO:'/Users/macbook/SuperMODO/SuperMODO.xcodeproj',ModoApp:'/Users/macbook/ModoApp/ModoApp.xcodeproj'};
+  navigator.clipboard.writeText(p[proj]).then(function(){toast('✓ Ruta copiada — pégala en Xcode › Open...');});
 }
-
-// Open Xcode
-function openXcode(proj){
-  var paths={
-    'ModoApp':'/Users/macbook/ModoApp/ModoApp.xcodeproj',
-    'SuperMODO':'/Users/macbook/SuperMODO/SuperMODO.xcodeproj'
-  };
-  copyPath(paths[proj]||'/Users/macbook/'+proj);
-  showToast('✓ Ruta copiada — pega en Xcode → Open...');
-}
-
-// Open terminal (copies command)
-function openTerminal(folder,cmd){
-  var fullCmd='cd /Users/macbook/'+folder+' && '+cmd;
-  navigator.clipboard.writeText(fullCmd).then(function(){showToast('✓ Comando copiado — pégalo en Terminal');});
-}
-
-// Toast
-function showToast(msg){
+function toast(msg){
   var t=document.getElementById('toast');
   t.textContent=msg;t.style.opacity='1';t.style.transform='translateY(0)';
   setTimeout(function(){t.style.opacity='0';t.style.transform='translateY(8px)';},2500);
