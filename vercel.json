@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://premia-tierra-2akmrx7o9-enriquenemer-5454s-projects.vercel.app/$1",
+      "permanent": false
+    }
+  ]
+}
