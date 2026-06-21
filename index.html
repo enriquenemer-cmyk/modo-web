@@ -687,7 +687,8 @@ function updateCountdown(){
 updateCountdown();
 setInterval(updateCountdown,1000);
 
-// Form submit
+// Form submit — Web3Forms (gratuito, envia a enriquenemer@gmail.com)
+var W3F_KEY='YOUR_ACCESS_KEY'; // reemplazar con clave de web3forms.com/create
 function doSubmit(emailId, areaId, successId){
   var email=document.getElementById(emailId).value.trim();
   if(!email||!email.includes('@')){
@@ -695,10 +696,21 @@ function doSubmit(emailId, areaId, successId){
     document.getElementById(emailId).focus();
     return;
   }
+  fetch('https://api.web3forms.com/submit',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({
+      access_key:W3F_KEY,
+      email:email,
+      subject:'Nuevo pre-registro MODO — '+email,
+      message:'Email pre-registrado en modo.es: '+email,
+      from_name:'MODO Pre-registro'
+    })
+  }).then(function(r){return r.json();}).then(function(d){
+    console.log('Web3Forms:',d);
+  }).catch(function(e){console.warn('Form error:',e);});
   document.getElementById(areaId).style.display='none';
   document.getElementById(successId).classList.add('show');
-  // Aquí conectar con Mailchimp / Supabase / cualquier backend
-  console.log('Email registrado:',email);
 }
 function submitForm(){doSubmit('email-input','form-area','form-success');}
 function submitForm2(){doSubmit('email-input-2','form-area-2','form-success-2');}
